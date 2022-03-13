@@ -31,26 +31,26 @@ destroy_tree(tree_ptr_t tree)
 
 
 
-std::string
-path_to(tree_ptr_t tree, key_type key)
-{
-    if (!tree)
-    {
-        return "no";
-    }
-    if (tree -> key_ == key)
-    {
-        return "yes";
-    }
+// std::string
+// path_to(tree_ptr_t tree, key_type key)
+// {
+//     if (!tree)
+//     {
+//         return "no";
+//     }
+//     if (tree -> key_ == key)
+//     {
+//         return "yes";
+//     }
 
-    if ((path_to(tree -> left_, key) == "no") && (path_to(tree -> right_, key) == "no"))
-    {
-        return "no";
-    }
+//     if ((path_to(tree -> left_, key) == "no") && (path_to(tree -> right_, key) == "no"))
+//     {
+//         return "no";
+//     }
 
-    return "no";
+//     return "no";
 
-}
+// }
 
 
 // //////////////////////////////////////////////////////////////////////////////
