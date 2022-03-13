@@ -31,17 +31,14 @@ destroy_tree(tree_ptr_t tree)
 
 
 // //////////////////////////////////////////////////////////////////////////////
-std::string path = "";
-std::string pre_path = "";
 bool result = false;
 
 std::string
 path_to(tree_ptr_t tree, key_type key)
-{
-    pre_path = path;
+{   
+    std::string path = "";
     if (!tree)
     {
-        path.pop_back();    
         return "";
     }
     if (tree -> key_ == key)
@@ -52,36 +49,28 @@ path_to(tree_ptr_t tree, key_type key)
 
     if (result == false)
     {
-        path = path + "L";
-        cout << tree -> key_ << endl;
-        cout << path << endl;
-        path_to(tree-> left_, key);    
+        // cout << tree -> key_ << endl;
+        // cout << path << endl;
+        path = "L" + path_to(tree-> left_, key);    
     } 
     else
     {
-        return pre_path;
+        return path;
     }
 
 
     if (result == false)
     {
-        path = path + "R";
-        cout << tree -> key_ << endl;
-        cout << path << endl;
-        path_to(tree->right_,key);
-    }
-    else
-    {
-        return pre_path;
+        // cout << tree -> key_ << endl;
+        // cout << path << endl;
+        path = "R" + path_to(tree->right_,key);
     }
 
-    path.pop_back();
     if (result == false)
     {
         return "-";
     }
-    path = "";
-    return pre_path;
+    return path;
 }
 
 

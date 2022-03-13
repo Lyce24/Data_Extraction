@@ -18,7 +18,7 @@ int main()
     tree_ptr_t root4 = create_tree(12,0,leaf3, root5);
     tree_ptr_t root_top = create_tree(126,0,root2,root4);
 
-    string path_to_8 = path_to(root_top,8);
+    string path_to_8 = path_to(root_top,-53424);
     string path_to_12 = path_to(root_top,12);
     string path_to_nonsense = path_to(root_top,1123);
 
