@@ -1,4 +1,7 @@
 #include "tree.hh"
+#include <iostream>
+
+using namespace std;
 
 //////////////////////////////////////////////////////////////////////////////
 tree_ptr_t
@@ -28,29 +31,59 @@ destroy_tree(tree_ptr_t tree)
 
 
 // //////////////////////////////////////////////////////////////////////////////
+std::string path = "";
+std::string pre_path = "";
+bool result = false;
+
+std::string
+path_to(tree_ptr_t tree, key_type key)
+{
+    pre_path = path;
+    if (!tree)
+    {
+        path.pop_back();    
+        return "";
+    }
+    if (tree -> key_ == key)
+    {
+        result = true;
+        return "";
+    }    
+
+    if (result == false)
+    {
+        path = path + "L";
+        cout << tree -> key_ << endl;
+        cout << path << endl;
+        path_to(tree-> left_, key);    
+    } 
+    else
+    {
+        return pre_path;
+    }
 
 
+    if (result == false)
+    {
+        path = path + "R";
+        cout << tree -> key_ << endl;
+        cout << path << endl;
+        path_to(tree->right_,key);
+    }
+    else
+    {
+        return pre_path;
+    }
 
-// std::string
-// path_to(tree_ptr_t tree, key_type key)
-// {
-//     if (!tree)
-//     {
-//         return "no";
-//     }
-//     if (tree -> key_ == key)
-//     {
-//         return "yes";
-//     }
+    path.pop_back();
+    if (result == false)
+    {
+        return "-";
+    }
+    path = "";
+    return pre_path;
+}
 
-//     if ((path_to(tree -> left_, key) == "no") && (path_to(tree -> right_, key) == "no"))
-//     {
-//         return "no";
-//     }
-
-//     return "no";
-
-// }
 
 
 // //////////////////////////////////////////////////////////////////////////////

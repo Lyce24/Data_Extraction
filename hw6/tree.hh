@@ -43,10 +43,10 @@ void destroy_tree(tree_ptr_t tree);
            /   \
           /     \
         -5       12
-        / \     /
-      12   6   3
-          /
-         9
+        / \     /  \
+      12   6   3    5
+          /        /  \
+         9        8    7
 */
 // path_to(tree, 9) will return "LRL", path_to(tree, 3) will return "RL", and
 // path_to(126) will return "".
