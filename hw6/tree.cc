@@ -31,47 +31,54 @@ destroy_tree(tree_ptr_t tree)
 
 
 // //////////////////////////////////////////////////////////////////////////////
-bool result = false;
+std::string helper(tree_ptr_t tree, key_type key, bool result);
 
 std::string
 path_to(tree_ptr_t tree, key_type key)
 {   
-    std::string path = "";
-    if (!tree)
-    {
-        return "";
-    }
-    if (tree -> key_ == key)
-    {
-        result = true;
-        return "";
-    }    
-
-    if (result == false)
-    {
-        // cout << tree -> key_ << endl;
-        // cout << path << endl;
-        path = "L" + path_to(tree-> left_, key);    
-    } 
-    else
-    {
-        return path;
-    }
-
-
-    if (result == false)
-    {
-        // cout << tree -> key_ << endl;
-        // cout << path << endl;
-        path = "R" + path_to(tree->right_,key);
-    }
-
-    if (result == false)
-    {
-        return "-";
-    }
-    return path;
+    std::string path_ = helper(tree, key, false);
+    return path_;
 }
+
+std::string helper(tree_ptr_t tree, key_type key, bool result)
+{
+        std::string path = "";
+        if (!tree)
+        {
+            return "-";
+        }
+        if (tree -> key_ == key)
+        {
+            result = true;
+            return "";
+        }    
+
+        if (result == false)
+        {
+            // cout << tree -> key_ << endl;
+            // cout << path << endl;
+            "L" + helper(tree->left_, key, false);    
+        } 
+        else
+        {
+            return path;
+        }
+
+
+        if (result == false)
+        {
+            // cout << tree -> key_ << endl;
+            // cout << path << endl;
+            "R" + helper(tree->right_, key, false);   
+        }
+
+        if (result == false)
+        {
+            return "-";
+        }
+        return path;
+}
+
 
 
 
