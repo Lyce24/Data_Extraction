@@ -8,11 +8,11 @@
 #include <list>
 #include <memory>
 
-class HTree
+class HForest
 {
 
 public:
-      using tree_ptr_t = std::shared_ptr<const HTree>;
+      using tree_ptr_t = std::shared_ptr<const HForest>;
       enum class Direction
       {
             LEFT,
@@ -25,12 +25,12 @@ public:
 
 
       // Initialize with a key and a value:
-      HTree(key_t key,
+      HForest(key_t key,
             value_t value,
             tree_ptr_t left  = nullptr,
             tree_ptr_t right  = nullptr);
 
-      ~HTree() = default;
+      ~HForest() = default;
 
       key_t get_key() const;// Return key in current node
       value_t get_value() const;// Return value in current node
