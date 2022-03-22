@@ -2,10 +2,7 @@
 consists from 2 parts: stats.py and chats.py
 
 stats.py
-# This program processes a series of lines of text, looking for
-# contiguous runs of alphabetic characters treating them each as a
-# word. For each such word, it keeps a count of the number of its
-# occurrences in the text.
+This program processes a series of lines of text, looking for contiguous runs of alphabetic characters treating them each as a word. For each such word, it keeps a count of the number of its occurrences in the text.
 
 chats.py
 # Process a text and distill statistics about the bi-gram and tri-gram
