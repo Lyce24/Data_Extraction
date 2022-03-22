@@ -1,8 +1,4 @@
-#
-# CSCI 121 Fall 2021
-#
-# Project 2, Part 1
-#
+
 # stats.py
 #
 # Count and report statistics about the number of occurrences of
