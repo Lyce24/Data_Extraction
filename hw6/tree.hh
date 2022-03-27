@@ -16,7 +16,7 @@ struct Tree {
   value_type value_;
   Tree* left_;
   Tree* right_;
-};
+};  
 
 // Main type to access tree nodes (including the root):
 using tree_ptr_t = Tree*;

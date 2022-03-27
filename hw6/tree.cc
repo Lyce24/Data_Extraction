@@ -64,6 +64,35 @@ path_to(tree_ptr_t tree, key_type key)
     }
 }
 
+/*
+
+if (!tree)
+{
+    return "-";
+}
+
+if (!tree -> ket_ ==key)
+{
+    return "";
+}
+
+const auto left_res = path_to(tree -> left_,key);
+if (left_res != "-")
+{
+    return "L" + left_res;
+}
+const auto right_res = path_to(tree -> right_, key)
+if (right_res == "-")
+{
+    return "-";
+}
+else
+{
+    return "R"  + right_res;
+}
+
+*/
+
 
 
 
@@ -114,3 +143,12 @@ node_at(tree_ptr_t tree, std::string path)
     return tree;   //return the current branch
 }
 
+/*
+for (auto c : path){
+    if (!tree)  return nullptr;
+    if (c == "L")   tree = tree -> left_;
+    else if (c == "R")  tree = tree -> right_;
+    else    return nullptr;
+}
+
+*/
