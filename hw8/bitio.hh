@@ -6,7 +6,7 @@
 // BitInput: Read a single bit at a time from an input stream.
 // Before reading any bits, ensure your input stream still has valid inputs.
 class BitInput {
- public:
+ public:  
   // Construct with an input stream
   BitInput(std::istream& is);
 
@@ -18,12 +18,18 @@ class BitInput {
   // Read a single bit (or trailing zero)
   // Allowed to crash or throw an exception if called past end-of-file.
   bool input_bit();
+
+ private:
+  std::istream &in;
+  u_int8_t buf;
+  int nbits;
 };
 
 // BitOutput: Write a single bit at a time to an output stream
 // Make sure all bits are written out by the time the destructor is done.
 class BitOutput {
- public:
+ public:  
+  
   // Construct with an input stream
   BitOutput(std::ostream& os);
 
@@ -37,5 +43,10 @@ class BitOutput {
 
   // Output a single bit (buffered)
   void output_bit(bool bit);
+
+ private:
+  std::ostream &out;
+  u_int8_t buf;
+  int nbits;
 };
 

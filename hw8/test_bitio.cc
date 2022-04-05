@@ -15,9 +15,8 @@ test_1_bit()
 
   {
     BitOutput bito(bits);
-    bito.output_bit(1);
-  } // Need to call bito's destructor here
-
+    bito.output_bit(1); 
+  }
   BitInput biti(bits);
   assert(biti.input_bit() == true);
   assert(biti.input_bit() == false);  // Should just be a trailing zero
@@ -104,13 +103,13 @@ test_16_bits()
 
   {
     BitOutput bito(bits);
-    for (int i = 0; i < 16; ++i) {
+    for (int i = 0; i < 32; ++i) {
       bito.output_bit(i % 2);
     }
   }
 
   BitInput biti(bits);
-  for (int i = 0; i < 16; ++i) {
+  for (int i = 0; i < 32; ++i) {
     assert(biti.input_bit() == i % 2);
   }
 
@@ -128,14 +127,20 @@ test_100_bits()
     BitOutput bito(bits);
     for (int i = 0; i < 100; ++i) {
       bito.output_bit(!(i % 2));
-    }
+    } 
   }
+ 
 
   BitInput biti(bits);
   for (int i = 0; i < 100; ++i) {
     assert(biti.input_bit() != i % 2);
   }
   assert(!biti.input_bit());
+  assert(!biti.input_bit());
+  assert(!biti.input_bit());
+  assert(!biti.input_bit());
+  biti.input_bit();
+  assert(bits.eof());
 }
 
 
