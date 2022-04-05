@@ -35,12 +35,10 @@ int main(int argc, char **argv)
         while (indata.get(byte))
         {
             bytes.push_back(int(byte));
-            cout << int(byte) << endl;
         }
         bytes.push_back(256);
         for (const auto &i : bytes)
         {
-            cout << i << endl;
             for (const auto &e : hfm.encode(i)) 
             {
                 outfile << e;
