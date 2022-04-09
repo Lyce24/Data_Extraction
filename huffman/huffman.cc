@@ -1,17 +1,19 @@
+// Eriksen Liu
+
 #include "huffman.hh"
 #include <iostream>
 
 // method to combine two leaves to become a branch
-HTree::tree_ptr_t combine_leaf(int val, int key, HTree::tree_ptr_t left, HTree::tree_ptr_t right)
+HTree::tree_ptr_t combine_leaf(int key, int val, HTree::tree_ptr_t left, HTree::tree_ptr_t right)
 {
-    auto leaf = make_shared<HTree>(val, key, left, right); // make a branch connecting two leaves
+    auto leaf = make_shared<HTree>(key, val, left, right); // make a branch connecting two leaves
     return leaf;                                           // return this branch
 }
 
 // constructor of huffman - initialize the frequency table
 Huffman::Huffman()
 {
-    // from 1 - 225, initialize to 0
+    // from 1st - 255th position, initialize to 0
     for (int i = 0; i < Huffman::ALPHABET_SIZE - 1; i++)
         Huffman::frequency_table.push_back(0);
     // add 256th position with frequency of 1 as eof

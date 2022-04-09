@@ -1,3 +1,4 @@
+// Eriksen Liu
 #include "bitio.hh"
 #include <iostream>
 
@@ -51,14 +52,11 @@ void BitOutput::output_bit(bool bit)
 BitOutput::~BitOutput()
 {
   // if there are still spaces for buffer, then fill them then put the buffer into output
-  if (nbits != 8)
+  while (nbits != 8)
   {
-    while (nbits != 8)
-    {
-      // filled with trailing zeros
-      buf = buf << 1;
-      nbits++;
-    }
+    // filled with trailing zeros
+    buf = buf << 1;
+    nbits++;
   }
   // put the extra buffer into out.
   out.put(buf);

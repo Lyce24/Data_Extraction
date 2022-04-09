@@ -63,6 +63,18 @@ int main()
   auto path_1231 = root ->path_to(1231);
   cout << "Result for path to node 1231 (equals to nullptr?): " << (path_1231 == nullptr) << endl;
 
+  auto path_front = (*(path_9)).begin();
+    for (path_front; path_front != (*(path_9)).end(); path_front++)
+    {
+        if (*path_front == HTree::Direction::LEFT)
+        {
+          cout << "True" << endl;
+        }
+        else
+        {
+          cout << "False" << endl;
+        }
+    }
   return 0;
 }
 

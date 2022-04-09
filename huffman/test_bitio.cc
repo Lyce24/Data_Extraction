@@ -1,3 +1,5 @@
+// Eriksen Liu
+
 /*
  * Unit tests for class BitIO
  */

@@ -38,4 +38,4 @@ I didn't change the test codes given. All tests in the test_huffman.cc and test_
 |    apple.txt    |                  531 bytes                  |           188 bytes            |                                                  Yes |
 
 
-I used cmp to check each decompressed file and original file. All five files pass the test.
+I used cmp to check each decompressed file and original file. All six files pass the test.

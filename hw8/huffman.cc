@@ -135,7 +135,7 @@ int Huffman::decode(bool bits)
             }
         }
     }
-    return 3;
+    return -1;
 }
 
 

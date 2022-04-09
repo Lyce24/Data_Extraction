@@ -1,3 +1,5 @@
+// Eriksen Liu
+
 /*
  * A pair of simple classes tu perform stream I/O on individual bits.
  */

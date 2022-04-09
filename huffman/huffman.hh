@@ -1,3 +1,5 @@
+// Eriksen Liu
+
 /*
  * Huffman: a class to encode and decode symbols based on adaptive Huffman coding
  * https://en.wikipedia.org/wiki/Huffman_coding

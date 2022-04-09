@@ -1,3 +1,5 @@
+// Eriksen Liu
+
 /*
  * test_huffman: test the Huffman class
  */
