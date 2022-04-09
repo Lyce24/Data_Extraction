@@ -1,5 +1,0 @@
-The decoder program takes in a filename as well, reads it, and decompressed it into a file with the same name and a .plaintext suffix. So, for example, running ./decoder bitio.cc.comp should produce a bitio.cc.comp.plaintext file in the current directory. It should be identical to bitio.cc.
-
-In both instances, try to challenge yourself to take more than a single command-line argument, so that your encoder actually compresses all the filenames given as input, and the decoder decompresses all of its inputs as well.
-
-Hint: your main decoder loop might look something like this: ``` while (true) { while (symbol > 0) { symbol = huff.decode(bitio.input_bit()); } if (symbol == Huffman::HEOF) { break; } else { out.put(symbol); symbol = -1; } }
